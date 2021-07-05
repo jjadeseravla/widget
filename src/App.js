@@ -41,7 +41,9 @@ const options = [
 //   return window.location.pathname === route ? component : null;
 // }
 
-export default () => {
+const App = () => {
+
+  const [selected, setSelected] = useState('');
 
   return (
     <div>
@@ -53,7 +55,12 @@ export default () => {
         <Search/>
       </Route>
       <Route path="/dropdown">
-        <Dropdown/>
+        <Dropdown 
+          label="Select a colour" 
+          options={options} 
+          selected={selected} 
+          onSelectedChange={setSelected}
+        />
       </Route>
       <Route path="/translate">
         <Translate/>
@@ -61,3 +68,5 @@ export default () => {
     </div>
   );
 };
+
+export default App;

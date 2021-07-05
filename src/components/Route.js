@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react'; //no need to import react cos no jsx
 // import { Route } from 'workbox-routing';
 
-const Route = ({ path, children }) => {
+const Route = ({ path, children }) => { //prop children is anything rendered inside the <Route/> component.  
+  //so in App.js accordion, list, dropdown and translate are all components that Route has wrapped in, so all
+  //of those are the children props passed down to Route
   
   const [currentPath, setCurrentPath] = useState(window.location.pathname); //gets Route to update
 
